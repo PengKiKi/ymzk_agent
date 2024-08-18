@@ -1,6 +1,11 @@
 # ymzk_agent
 
 
+metaGPT 使用:
+https://docs.deepwisdom.ai/main/zh/guide/tutorials/agent_101.html
+
+
+
 https://ollama.com/ 
 
 ```bash
