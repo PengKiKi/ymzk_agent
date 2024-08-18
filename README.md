@@ -16,7 +16,8 @@ pip install git+https://github.com/geekan/MetaGPT
 
 metagpt "Create a 2048 game"
 
-
+# 修复llm结果
+# https://github.com/geekan/MetaGPT-docs/blob/main/src/zh/guide/tutorials/integration_with_open_llm.md#%E5%8F%AF%E9%80%89%E7%9A%84%E4%BF%AE%E5%A4%8Dllm%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C
 
 
 ```

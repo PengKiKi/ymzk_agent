@@ -120,7 +120,7 @@ class SimpleReviewer(Role):
 
 async def main(
     idea: str = "write a function that calculates the product of a list",
-    investment: float = 300.0,
+    investment: float = 3.0,
     n_round: int = 5,
     add_human: bool = False,
 ):
