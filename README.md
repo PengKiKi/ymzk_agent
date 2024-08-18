@@ -55,3 +55,14 @@ llm:
 repair_llm_output: true
 
 ```
+
+```yaml
+llm:
+  api_type: "ollama"  # or azure / ollama / open_llm etc. Check LLMType for more options
+  model: "llama2:13b"  # or gpt-3.5-turbo-1106 / gpt-4-1106-preview
+  base_url: "http://192.168.193.231:11434/api"  # or forward url / other llm url
+  api_key: "test"
+  
+repair_llm_output: true
+
+```
