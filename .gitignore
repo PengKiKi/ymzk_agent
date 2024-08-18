@@ -1,6 +1,6 @@
 .venv
 logs
 metagpt
-workspace
+workspace/
 
 .DS_Store

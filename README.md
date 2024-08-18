@@ -28,8 +28,14 @@ metagpt "Create a 2048 game"
 ```
 
 
+```bash
+ollama pull llama3.1:70b
+
+```
+
 
 `/Users/qi/.metagpt/config2.yaml` 
+
 ```yaml
 llm:
   api_type: "ollama"  # or azure / ollama / open_llm etc. Check LLMType for more options
