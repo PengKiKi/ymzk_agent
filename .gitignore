@@ -1,7 +1,10 @@
 .venv
 .conda
+.cache
+
 logs
 metagpt
 workspace/
 
 .DS_Store
+agentops.log
