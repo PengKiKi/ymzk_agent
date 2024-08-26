@@ -22,7 +22,7 @@ llm_config = {
 
 
 task = "Write a blogpost about the stock price performance of "\
-"Nvidia in the past month. Today's date is 2024-04-23."
+"Nvidia in the past month. Today's date is 2024-08-23."
 
 
 # ## Build a group chat
