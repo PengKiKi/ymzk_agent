@@ -71,3 +71,76 @@ def currency_calculator(
 
 
 print(chatbot.llm_config["tools"])
+
+assert user_proxy.function_map["currency_calculator"]._origin == currency_calculator
+
+
+with Cache.disk() as cache:
+    # start the conversation
+    res = user_proxy.initiate_chat(
+        chatbot, message="How much is 123.45 USD in EUR?", summary_method="reflection_with_llm", cache=cache
+    )
+
+
+print("Chat summary:", res.summary)
+
+
+
+
+
+# chatbot = autogen.AssistantAgent(
+#     name="chatbot",
+#     system_message="For currency exchange tasks, only use the functions you have been provided with. Reply TERMINATE when the task is done.",
+#     llm_config=llm_config,
+# )
+
+# # create a UserProxyAgent instance named "user_proxy"
+# user_proxy = autogen.UserProxyAgent(
+#     name="user_proxy",
+#     is_termination_msg=lambda x: x.get("content", "") and x.get("content", "").rstrip().endswith("TERMINATE"),
+#     human_input_mode="NEVER",
+#     max_consecutive_auto_reply=10,
+# )
+
+
+# class Currency(BaseModel):
+#     currency: Annotated[CurrencySymbol, Field(..., description="Currency symbol")]
+#     amount: Annotated[float, Field(0, description="Amount of currency", ge=0)]
+
+
+# # another way to register a function is to use register_function instead of register_for_execution and register_for_llm decorators
+# def currency_calculator(
+#     base: Annotated[Currency, "Base currency: amount and currency symbol"],
+#     quote_currency: Annotated[CurrencySymbol, "Quote currency symbol"] = "USD",
+# ) -> Currency:
+#     quote_amount = exchange_rate(base.currency, quote_currency) * base.amount
+#     return Currency(amount=quote_amount, currency=quote_currency)
+
+
+# autogen.agentchat.register_function(
+#     currency_calculator,
+#     caller=chatbot,
+#     executor=user_proxy,
+#     description="Currency exchange calculator.",
+# )
+
+
+# with Cache.disk() as cache:
+#     # start the conversation
+#     res = user_proxy.initiate_chat(
+#         chatbot, message="How much is 112.23 Euros in US Dollars?", summary_method="reflection_with_llm", cache=cache
+#     )
+    
+# print("Chat summary:", res.summary)
+
+
+# with Cache.disk() as cache:
+#     # start the conversation
+#     res = user_proxy.initiate_chat(
+#         chatbot,
+#         message="How much is 123.45 US Dollars in Euros?",
+#         cache=cache,
+#     )
+    
+# print("Chat history:", res.chat_history)
+
